@@ -1,0 +1,48 @@
+# Project: MyProject
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = MyProject_private.res
+OBJ      = MyPro-Alumni/core.o MyPro-Alumni/global.o MyPro-Alumni/login.o MyPro-Alumni/main.o MyPro-Alumni/news.o MyPro-Alumni/question.o $(RES)
+LINKOBJ  = MyPro-Alumni/core.o MyPro-Alumni/global.o MyPro-Alumni/login.o MyPro-Alumni/main.o MyPro-Alumni/news.o MyPro-Alumni/question.o $(RES)
+LIBS     = -L"E:/new-2023/Dev-Cpp/TDM-GCC-64/lib" -L"E:/new-2023/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -pg
+INCS     = -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/include" -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/include" -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"E:/new-2023/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = MyProject.exe
+CXXFLAGS = $(CXXINCS) -pg -fexec-charset=gbk
+CFLAGS   = $(INCS) -pg -fexec-charset=gbk
+DEL      = E:\new-2023\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+MyPro-Alumni/core.o: MyPro-Alumni/core.cpp
+	$(CPP) -c MyPro-Alumni/core.cpp -o MyPro-Alumni/core.o $(CXXFLAGS)
+
+MyPro-Alumni/global.o: MyPro-Alumni/global.cpp
+	$(CPP) -c MyPro-Alumni/global.cpp -o MyPro-Alumni/global.o $(CXXFLAGS)
+
+MyPro-Alumni/login.o: MyPro-Alumni/login.cpp
+	$(CPP) -c MyPro-Alumni/login.cpp -o MyPro-Alumni/login.o $(CXXFLAGS)
+
+MyPro-Alumni/main.o: MyPro-Alumni/main.cpp
+	$(CPP) -c MyPro-Alumni/main.cpp -o MyPro-Alumni/main.o $(CXXFLAGS)
+
+MyPro-Alumni/news.o: MyPro-Alumni/news.cpp
+	$(CPP) -c MyPro-Alumni/news.cpp -o MyPro-Alumni/news.o $(CXXFLAGS)
+
+MyPro-Alumni/question.o: MyPro-Alumni/question.cpp
+	$(CPP) -c MyPro-Alumni/question.cpp -o MyPro-Alumni/question.o $(CXXFLAGS)
+
+MyProject_private.res: MyProject_private.rc 
+	$(WINDRES) -i MyProject_private.rc --input-format=rc -o MyProject_private.res -O coff 
+

@@ -1,2 +1,2 @@
-# Alumni-Management-System
-j基于C++的校友管理系统
+# Alumni-Sys-Zcq
+钟楚淇数据结构大作业。

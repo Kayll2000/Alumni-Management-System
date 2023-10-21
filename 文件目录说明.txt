@@ -1,0 +1,7 @@
+1、bin目录存放可执行程序
+2、devproject目录存放DEV工程文件
+3、include目录存放.h文件
+4、obj目录存放.o文件
+5、origin version目录存放开发的初始文件（初始代码）
+6、src目录存放.c文件
+7、temp目录存放临时文件
