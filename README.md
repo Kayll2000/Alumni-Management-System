@@ -1,2 +1,2 @@
-# Alumni-Sys-Zcq
-钟楚淇数据结构大作业。
+# Alumni-Sys base C++
+基于C++的校友管理系统
